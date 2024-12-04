@@ -92,7 +92,7 @@ def main(page: ft.Page):
     [5,	0.451],
     ])
 
-   # Generate random data
+   # GENERATE X AND Y FROM THE DATA ARRAY
     x = dt[:, 0]
     y = dt[:, 1]
 
@@ -106,25 +106,22 @@ def main(page: ft.Page):
     # Line of best fit
     plt.plot(x, poly(np.log(x)), color='red', label='Line of Best Fit')
 
-    # Logarithmic axes
+
     plt.xscale('log')
     plt.yscale('log')
 
-    # Labels and title
+
     plt.xlabel('Time in Seconds')
     plt.ylabel('x(t) In Meters')
     plt.title('Displacement Chart')
 
-    # Legend
-    plt.legend()
 
-    # Display the plot
-    plt.show()
+    plt.legend()
 
 
     page.appbar = ft.AppBar(
-        title= ft.Text('Displacement Graph'),
-        bgcolor= ft.colors.BLUE_100
+        title= ft.Text('Displacement Graph', color=ft.colors.WHITE),
+        bgcolor= ft.colors.BLUE
     )
     page.theme_mode = 'light'
 

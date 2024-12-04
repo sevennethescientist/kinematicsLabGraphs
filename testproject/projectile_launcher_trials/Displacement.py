@@ -7,13 +7,14 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Importing GUI Libraries
 import flet as ft
 from flet.matplotlib_chart import MatplotlibChart
 
 def main(page: ft.Page):
     
     # Constants
-# Data for trials: [angle (degrees), time of flight (s), horizontal distance (m), max height (m)]
+    # Data from trials: [angle (degrees), time of flight (s), horizontal distance (m), max height (m)]
     trials_dt = [
         [60, 0.85, 1.82, 0.69],  # trial one
         [70, 0.96, 1.27, 0.66],  # trial two
@@ -34,7 +35,6 @@ def main(page: ft.Page):
         x_position = trial[2]  # horizontal distance
         label = f"θ = {theta}°"
 
-        # For simplicity, plot a line connecting the start (0, 0) to the horizontal distance at the time of flight
         plt.plot([0, t_flight], [0, x_position], label=label)
 
     # Add labels, title, and legend
